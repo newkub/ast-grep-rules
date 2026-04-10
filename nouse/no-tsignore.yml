@@ -1,0 +1,8 @@
+id: no-tsignore
+message: Avoid using @ts-ignore. Consider using @ts-expect-error or fixing the type error instead.
+severity: warning
+language: typescript
+rule:
+  pattern: $TS_IGNORE
+  kind: comment
+  regex: '@ts-ignore'

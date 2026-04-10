@@ -1,0 +1,7 @@
+id: impl-todo
+message: TODO comment found. Address the pending task or convert to an issue tracker.
+severity: warning
+language: typescript
+rule:
+  kind: comment
+  regex: 'TODO|FIXME|HACK|XXX'
