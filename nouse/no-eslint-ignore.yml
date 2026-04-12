@@ -1,0 +1,7 @@
+id: no-eslint-ignore
+message: Avoid using eslint-disable comments. Fix the underlying issue instead of suppressing it.
+severity: warning
+language: typescript
+rule:
+  kind: comment
+  regex: '(?i)eslint-disable'
