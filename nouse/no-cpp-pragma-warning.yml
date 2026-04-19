@@ -1,0 +1,9 @@
+id: no-cpp-pragma-warning
+language: cpp
+rule:
+  pattern: "#pragma warning"
+message: |
+  ห้ามใช้ #pragma warning เพื่อ suppress compiler warnings
+  แก้ปัญหาที่ source แทนการ suppress
+  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
+severity: error

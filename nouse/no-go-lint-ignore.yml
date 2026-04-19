@@ -1,0 +1,9 @@
+id: no-go-lint-ignore
+language: go
+rule:
+  pattern: "//lint:ignore"
+message: |
+  ห้ามใช้ //lint:ignore เพื่อ suppress lint warnings
+  แก้ปัญหาที่ source แทนการ suppress
+  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
+severity: error

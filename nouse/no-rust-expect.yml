@@ -1,0 +1,9 @@
+id: no-rust-expect
+language: rust
+rule:
+  pattern: "#[expect($$$)]"
+message: |
+  ห้ามใช้ #[expect(...)] เพื่อ expect lint warnings
+  แก้ปัญหาที่ source แทนการ suppress
+  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
+severity: error

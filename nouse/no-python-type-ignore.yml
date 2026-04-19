@@ -1,0 +1,9 @@
+id: no-python-type-ignore
+language: python
+rule:
+  pattern: "# type: ignore"
+message: |
+  ห้ามใช้ # type: ignore เพื่อ suppress type checking
+  แก้ปัญหาที่ source แทนการ suppress
+  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
+severity: error

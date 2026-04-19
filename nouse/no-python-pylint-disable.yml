@@ -1,0 +1,9 @@
+id: no-python-pylint-disable
+language: python
+rule:
+  pattern: "# pylint: disable"
+message: |
+  ห้ามใช้ # pylint: disable เพื่อ suppress pylint warnings
+  แก้ปัญหาที่ source แทนการ suppress
+  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
+severity: error
