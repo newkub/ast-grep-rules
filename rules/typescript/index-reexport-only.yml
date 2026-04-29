@@ -1,0 +1,33 @@
+id: index-reexport-only
+message: index.ts files should only contain re-exports, no logic implementation.
+severity: warning
+language: typescript
+rule:
+  any:
+    - pattern: |
+        export function $FUNC($PARAMS) {
+          $BODY
+        }
+    - pattern: |
+        export class $CLASS {
+          $MEMBERS
+        }
+    - pattern: |
+        const $CONST = $VALUE
+      has:
+        pattern: |
+          export { $CONST }
+    - pattern: |
+        export default $DEFAULT
+  not:
+    any:
+      - pattern: |
+          export { $EXPORTS } from '$PATH'
+      - pattern: |
+          export * from '$PATH'
+      - pattern: |
+          export * as $NAME from '$PATH'
+fix: |
+  export { $EXPORTS } from '$PATH'
+files:
+  - "**/index.ts"

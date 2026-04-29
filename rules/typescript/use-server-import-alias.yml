@@ -1,0 +1,16 @@
+id: use-server-import-alias
+message: Use #server import alias for server/api imports instead of relative paths.
+severity: warning
+language: typescript
+rule:
+  pattern: |
+    import $IMPORTS from '$PATH'
+  regex: '\.\./\.\./server/api/|\.\./server/api/|server/api/'
+  not:
+    pattern: |
+      import $IMPORTS from '#server/$PATH'
+fix: |
+  import $IMPORTS from '#server/$PATH'
+files:
+  - "server/**/*.ts"
+  - "**/*.ts"

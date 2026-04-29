@@ -1,9 +1,0 @@
-id: no-python-noqa
-language: python
-rule:
-  pattern: "# noqa"
-message: |
-  ห้ามใช้ # noqa เพื่อ suppress lint warnings
-  แก้ปัญหาที่ source แทนการ suppress
-  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
-severity: error

@@ -1,0 +1,14 @@
+id: pages-import-components
+message: All pages must import components from components/ directory.
+severity: warning
+language: typescript
+rule:
+  any:
+    - pattern: |
+        import $COMPONENT from '$PATH'
+      not:
+        regex: '@/components/'
+fix: |
+  import $COMPONENT from '@/components/$COMPONENT'
+files:
+  - "pages/**/*.vue"

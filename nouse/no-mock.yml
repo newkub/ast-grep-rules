@@ -1,8 +1,0 @@
-id: no-mock
-message: Avoid using MOCK comments. Consider removing mock data or moving it to test fixtures.
-severity: warning
-language: typescript
-rule:
-  pattern: '// $TEXT'
-  regex: '(?i)mock'
-  kind: comment

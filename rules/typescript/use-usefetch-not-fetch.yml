@@ -1,0 +1,17 @@
+id: use-usefetch-not-fetch
+message: Use useFetch or useAsyncData instead of $fetch for data fetching in Vue components.
+severity: warning
+language: typescript
+rule:
+  pattern: |
+    $FETCH = $fetch($URL, $OPTIONS)
+  not:
+    any:
+      - pattern: |
+          $DATA = useFetch($URL, $OPTIONS)
+      - pattern: |
+          $DATA = useAsyncData($URL, $OPTIONS)
+fix: |
+  const { data: $DATA } = useFetch($URL, $OPTIONS)
+files:
+  - "**/*.vue"

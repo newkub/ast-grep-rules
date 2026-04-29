@@ -1,9 +1,0 @@
-id: no-rust-allow
-language: rust
-rule:
-  pattern: "#[allow($$$)]"
-message: |
-  ห้ามใช้ #[allow(...)] เพื่อ suppress lint warnings
-  แก้ปัญหาที่ source แทนการ suppress
-  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
-severity: error

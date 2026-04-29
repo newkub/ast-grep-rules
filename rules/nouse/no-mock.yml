@@ -1,0 +1,8 @@
+id: no-mock
+message: Avoid using MOCK in code. Consider removing mock data or moving it to test fixtures.
+severity: warning
+language: typescript
+rule:
+  pattern: $IDENTIFIER
+  regex: '(?i)mock'
+  kind: identifier

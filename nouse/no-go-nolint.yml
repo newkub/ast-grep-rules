@@ -1,9 +1,0 @@
-id: no-go-nolint
-language: go
-rule:
-  pattern: "//nolint"
-message: |
-  ห้ามใช้ //nolint เพื่อ suppress lint warnings
-  แก้ปัญหาที่ source แทนการ suppress
-  ใช้ /no-use-ignore เพื่อดูวิธีแก้ปัญหา
-severity: error

@@ -1,7 +1,0 @@
-id: no-biome-ignore
-message: Avoid using biome-ignore comments. Fix the underlying issue instead of suppressing it.
-severity: warning
-language: typescript
-rule:
-  kind: comment
-  regex: '(?i)biome-ignore'

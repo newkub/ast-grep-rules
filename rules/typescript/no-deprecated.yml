@@ -1,0 +1,10 @@
+id: no-deprecated
+message: Remove all @deprecated code and usage.
+severity: error
+language: typescript
+rule:
+  kind: comment
+  regex: '@deprecated'
+files:
+  - "**/*.ts"
+  - "**/*.vue"
