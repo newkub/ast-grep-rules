@@ -93,3 +93,21 @@ export interface FixCommandOptions {
   /** Show what would be fixed without making changes */
   dryRun?: boolean;
 }
+
+export interface ExplainCommandOptions {
+  /** Output as JSON */
+  json?: boolean;
+  /** Language for explanation */
+  language?: string;
+}
+
+export interface WriteCommandOptions {
+  /** Rule ID to generate */
+  rule?: string;
+  /** Description of the rule to create */
+  description?: string;
+  /** Output file path */
+  output?: string;
+  /** Preview without writing */
+  preview?: boolean;
+}

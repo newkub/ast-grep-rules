@@ -1,12 +1,12 @@
 {
-  "name": "@wrikka/ast-grep-cli",
+  "name": "@wrikka/ast-grep",
   "version": "0.1.0",
   "description": "CLI tool for managing and running ast-grep rules",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "ast-grep-cli": "./dist/index.js"
+    "ast-grep": "./dist/index.js"
   },
   "files": [
     "dist",
@@ -22,16 +22,18 @@
     "test": "bun test",
     "verify": "bun run typecheck && bun run lint && bun run test",
     "prepublishOnly": "bun run build",
-    "release": "bun run verify && bun run build && npm publish"
+    "release": "auto shipit"
   },
   "dependencies": {
     "@ast-grep/napi": "^0.42.1",
     "cac": "^7.0.0",
+    "openai": "^4.85.1",
     "yaml": "^2.8.3"
   },
   "devDependencies": {
     "@types/bun": "^1.3.13",
     "@types/node": "^25.6.0",
+    "auto": "^11.3.6",
     "biome": "^0.3.3",
     "bunup": "^0.16.31",
     "typescript": "^6.0.3"
@@ -56,5 +58,21 @@
     "type": "git",
     "url": "https://github.com/wrikka/booking-platform",
     "directory": "ast-grep-rules"
+  },
+  "auto": {
+    "plugins": [
+      [
+        "released",
+        {
+          "label": ":shipit:",
+          "prereleaseLabel": "",
+          "message": "%TYPE went out with version: %VERSION",
+          "lockIssues": true,
+          "includeBotPrs": false
+        }
+      ]
+    ],
+    "baseBranch": "main",
+    "author": "Wrikka"
   }
 }
